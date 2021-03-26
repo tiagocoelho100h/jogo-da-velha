@@ -5,6 +5,16 @@ function jogada(square) {
     // A variavel statusSquare receber o texto presente no campo de jogada para verificar se ele está vazio posteriormente.
     var statusSquare = document.getElementById(square).innerText;
 
+    var movimentoRestante = parseInt(document.getElementById('movimentoRestante').innerText);
+    if (movimentoRestante => 0) {
+        --movimentoRestante;
+        document.getElementById('movimentoRestante').innerText = movimentoRestante;
+    }
+
+    if (movimentoRestante == 0) {
+        alert('Fim do jogo. Velha!');
+    }
+
     // Verifica se o statusSquare está vazio.
     if (statusSquare === 'X' || statusSquare === 'O') {
         alert('Jogada Invalida!');
